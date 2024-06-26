@@ -1,0 +1,33 @@
+import javax.swing.*;
+
+public class ExampleFrame extends JFrame {
+    
+    public ExampleFrame() {
+        super("Example Frame");
+        
+        // Create a panel and set its layout manager
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 2)); // Example of using GridLayout
+        
+        // Add components to the panel
+        panel.add(new JLabel("Label 1"));
+        panel.add(new JTextField());
+        panel.add(new JLabel("Label 2"));
+        panel.add(new JTextField());
+        panel.add(new JButton("Button 1"));
+        panel.add(new JButton("Button 2"));
+        
+        // Add the panel to the frame
+        getContentPane().add(panel);
+        
+        // Set frame properties
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null); // Center the frame
+        setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new ExampleFrame());
+    }
+}
